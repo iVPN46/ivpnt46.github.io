@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دانلود اپلیکیشن وی‌پی‌ان 46</title>
+    <!-- لینک فونت Vazir از Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* تنظیمات کلی */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header img {
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .download-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .download-card {
+            background: linear-gradient(145deg, #2d2d2d, #1f1f1f);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .download-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ff6f61;
+        }
+
+        .download-card p {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+        }
+
+        .download-card .download-button {
+            background: linear-gradient(145deg, #ff6f61, #e65a50);
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            padding: 12px 24px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .download-card .download-button:hover {
+            background: linear-gradient(145deg, #e65a50, #ff6f61);
+        }
+
+        .guide-section {
+            margin-top: 3rem;
+            padding: 20px;
+            background: #2d2d2d;
+            border-radius: 15px;
+        }
+
+        .guide-section h2 {
+            font-size: 1.8rem;
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .guide-section ol {
+            padding-right: 20px;
+        }
+
+        .guide-section ol li {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+
+        .faq-section {
+            margin-top: 3rem;
+            padding: 20px;
+            background: #2d2d2d;
+            border-radius: 15px;
+        }
+
+        .faq-section h2 {
+            font-size: 1.8rem;
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            background: #3d3d3d;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #4d4d4d;
+        }
+
+        .faq-question h3 {
+            font-size: 1rem;
+            color: #ff6f61;
+            margin: 0;
+        }
+
+        .faq-question .icon {
+            font-size: 1.2rem;
+            color: #ff6f61;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 15px;
+            background: #3d3d3d;
+            border-radius: 10px;
+            margin-top: 10px;
+            display: none;
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* استایل برای موبایل */
+        @media (max-width: 768px) {
+            .download-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .download-card {
+                max-width: 100%;
+            }
+
+            .faq-question h3 {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://hair-engine.com/2/logo(BlackYellow).jpg" alt="وی‌پی‌ان 46">
+        <h1>دانلود اپلیکیشن وی‌پی‌ان 46</h1>
+        <p>
+            اپلیکیشن وی‌پی‌ان 46 را دانلود کنید و از اینترنت آزاد، سریع و امن لذت ببرید. برای تمام دستگاه‌ها!
+        </p>
+    </div>
+    <div class="download-section">
+        <!-- دانلود اندروید -->
+        <div class="download-card">
+            <h2>دانلود برای اندروید</h2>
+            <p>اپلیکیشن وی‌پی‌ان 46 برای دستگاه‌های اندروید.</p>
+            <a href="#" id="android-download" class="download-button">دانلود اپلیکیشن</a>
+            <p id="android-message" style="color: #ff6f61; display: none;">این لینک فقط برای کاربران ایرانی قابل دسترسی است.</p>
+            <p id="vpn-message" style="color: #ff6f61; display: none;">لطفاً VPN خود را خاموش کنید و دوباره تلاش کنید.</p>
+        </div>
+
+        <!-- دانلود iOS -->
+        <div class="download-card">
+            <h2>دانلود برای iOS</h2>
+            <p>به‌زودی...</p>
+        </div>
+
+        <!-- کالکشن پی‌سی -->
+        <div class="download-card">
+            <h2>کالکشن برای پی‌سی</h2>
+            <p>به‌زودی...</p>
+        </div>
+    </div>
+
+    <!-- راهنمای نصب -->
+    <div class="guide-section">
+        <h2>راهنمای نصب اپلیکیشن وی‌پی‌ان 46</h2>
+        <ol>
+            <li>اپلیکیشن را از لینک بالا دانلود کنید.</li>
+            <li>فایل APK را در دستگاه اندروید خود نصب کنید.</li>
+            <li>پس از نصب، اپلیکیشن را باز کنید و مراحل ثبت نام را تکمیل کنید.</li>
+            <li>پلن مورد نظر خود را انتخاب و پرداخت را انجام دهید.</li>
+            <li>پس از پرداخت، تمام سرورها برای شما فعال خواهند شد.</li>
+        </ol>
+    </div>
+
+    <!-- سوالات متداول (FAQ) -->
+    <div class="faq-section">
+        <h2>سوالات متداول</h2>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(1)">
+                <h3>چگونه اپلیکیشن را نصب کنم؟</h3>
+                <div class="icon">▼</div>
+            </div>
+            <div class="faq-answer" id="answer1">
+                پس از دانلود فایل APK، آن را در دستگاه اندروید خود نصب کنید. ممکن است نیاز باشد گزینه "نصب از منابع ناشناخته" را فعال کنید.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(2)">
+                <h3>آیا این اپلیکیشن رایگان است؟</h3>
+                <div class="icon">▼</div>
+            </div>
+            <div class="faq-answer" id="answer2">
+                اپلیکیشن رایگان است، اما برای استفاده از سرورها باید یک پلن خریداری کنید.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(3)">
+                <h3>چگونه پرداخت انجام دهم؟</h3>
+                <div class="icon">▼</div>
+            </div>
+            <div class="faq-answer" id="answer3">
+                پس از ثبت نام، وارد پنل کاربری خود شوید و پلن مورد نظر را انتخاب کنید. سپس پرداخت را از طریق درگاه بانکی انجام دهید.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(4)">
+                <h3>آیا می‌توانم از VPN استفاده کنم؟</h3>
+                <div class="icon">▼</div>
+            </div>
+            <div class="faq-answer" id="answer4">
+                برای دانلود اپلیکیشن، VPN باید خاموش باشد. پس از نصب، می‌توانید از VPN استفاده کنید.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(5)">
+                <h3>چگونه با پشتیبانی تماس بگیرم؟</h3>
+                <div class="icon">▼</div>
+            </div>
+            <div class="faq-answer" id="answer5">
+                از طریق بخش "تماس با ما" در اپلیکیشن یا ایمیل support@vpn46.com با پشتیبانی در ارتباط باشید.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // تابع تشخیص ربات‌ها
+        function isBot() {
+            const userAgent = navigator.userAgent;
+            const bots = ['Googlebot', 'Bingbot', 'Slurp', 'DuckDuckBot', 'Baiduspider', 'YandexBot', 'Sogou', 'Exabot', 'facebot', 'ia_archiver'];
+            return bots.some(bot => userAgent.includes(bot));
+        }
+
+        // اگر کاربر ربات باشد، دسترسی مسدود شود
+        if (isBot()) {
+            document.body.innerHTML = "<h1 style='text-align: center; color: #ff6f61;'>دسترسی مسدود شده است.</h1>";
+        }
+
+        // تابع تشخیص IP و کشور کاربر
+        async function getUserCountry() {
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                return {
+                    countryCode: data.country_code,
+                    isVPN: data.vpn || data.proxy || data.tor
+                };
+            } catch (error) {
+                console.error('خطا در دریافت اطلاعات IP:', error);
+                return null;
+            }
+        }
+
+        // رمزگشایی لینک دانلود
+        function decodeDownloadLink() {
+            const encodedLink = "aHR0cHM6Ly93ZWJzaXRlLTQxOGZjOThjLmV3eS56dWgudGVtcG9yYXJ5LnNpdGUvc3VjY2Vzcy9WUE40Ni5hcGs=";
+            return atob(encodedLink);
+        }
+
+        // بررسی کشور کاربر و نمایش لینک دانلود
+        async function checkUserCountry() {
+            const userInfo = await getUserCountry();
+            const androidDownloadLink = document.getElementById('android-download');
+            const androidMessage = document.getElementById('android-message');
+            const vpnMessage = document.getElementById('vpn-message');
+
+            if (userInfo && userInfo.countryCode === 'IR') {
+                if (userInfo.isVPN) {
+                    androidDownloadLink.style.display = "none";
+                    androidMessage.style.display = "none";
+                    vpnMessage.style.display = "block";
+                } else {
+                    // رمزگشایی لینک دانلود
+                    const decodedLink = decodeDownloadLink();
+                    androidDownloadLink.href = decodedLink;
+                    androidDownloadLink.style.display = "inline-block";
+                    androidMessage.style.display = "none";
+                    vpnMessage.style.display = "none";
+                }
+            } else {
+                androidDownloadLink.style.display = "none";
+                androidMessage.style.display = "block";
+                vpnMessage.style.display = "none";
+            }
+        }
+
+        // اجرای تابع بررسی کشور
+        checkUserCountry();
+
+        // تابع نمایش/مخفی کردن جواب سوالات متداول
+        function toggleAnswer(id) {
+            const answer = document.getElementById(`answer${id}`);
+            answer.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
