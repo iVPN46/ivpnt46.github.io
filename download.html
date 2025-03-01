@@ -306,13 +306,13 @@
             document.body.innerHTML = "<h1 style='text-align: center; color: #ff6f61;'>دسترسی مسدود شده است.</h1>";
         }
 
-        // تابع تشخیص IP و کشور کاربر
+        // تابع تشخیص IP و کشور کاربر با استفاده از ipinfo.io
         async function getUserCountry() {
             try {
-                const response = await fetch('https://ipapi.co/json/');
+                const response = await fetch('https://ipinfo.io/json?token=YOUR_TOKEN'); // توکن خود را از ipinfo.io دریافت کنید
                 const data = await response.json();
                 return {
-                    countryCode: data.country_code,
+                    countryCode: data.country,
                     isVPN: data.vpn || data.proxy || data.tor
                 };
             } catch (error) {
@@ -334,13 +334,22 @@
             const androidMessage = document.getElementById('android-message');
             const vpnMessage = document.getElementById('vpn-message');
 
-            if (userInfo && userInfo.countryCode === 'IR') {
+            // Fallback: اگر API در دسترس نباشد، لینک دانلود نمایش داده شود
+            if (!userInfo) {
+                const decodedLink = decodeDownloadLink();
+                androidDownloadLink.href = decodedLink;
+                androidDownloadLink.style.display = "inline-block";
+                androidMessage.style.display = "none";
+                vpnMessage.style.display = "none";
+                return;
+            }
+
+            if (userInfo.countryCode === 'IR') {
                 if (userInfo.isVPN) {
                     androidDownloadLink.style.display = "none";
                     androidMessage.style.display = "none";
                     vpnMessage.style.display = "block";
                 } else {
-                    // رمزگشایی لینک دانلود
                     const decodedLink = decodeDownloadLink();
                     androidDownloadLink.href = decodedLink;
                     androidDownloadLink.style.display = "inline-block";
