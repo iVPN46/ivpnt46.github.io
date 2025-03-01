@@ -126,25 +126,6 @@
             background: linear-gradient(145deg, #e65a50, #ff6f61);
         }
 
-        .method-card .proxy-button {
-            background: linear-gradient(145deg, #4a90e2, #357abd);
-            border: none;
-            border-radius: 5px;
-            color: #ffffff;
-            padding: 10px 20px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            width: 100%;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .method-card .proxy-button:hover {
-            background: linear-gradient(145deg, #357abd, #4a90e2);
-        }
-
         /* کادر سبز رنگ برای اندروید */
         .android-banner {
             background: linear-gradient(145deg, #4CAF50, #388E3C);
@@ -314,6 +295,19 @@
                 font-size: 0.9rem;
             }
         }
+
+        /* استایل مخفی‌سازی لینک دریافت */
+        .hidden-link {
+            display: none;
+            font-size: 0;
+            color: transparent;
+        }
+
+        .hidden-link.show {
+            display: inline-block;
+            font-size: 1rem;
+            color: inherit;
+        }
     </style>
 </head>
 <body>
@@ -340,14 +334,15 @@
                 <p>اپلیکیشن اختصاصی وی‌پی‌ان 46 برای کاربران اندروید.</p>
             </div>
 
-            <div class="icon"><i class="fas fa-mobile-alt"></i></div>
-            <h2>خرید از اپلیکیشن</h2>
+            <div class="icon"><i class="fas fa-download"></i></div>
+            <h2>دریافت اپلیکیشن</h2>
             <ul>
                 <li>دانلود و نصب سریع اپلیکیشن اختصاصی وی‌پی‌ان 46.</li>
                 <li>پرداخت امن و سریع از طریق درگاه متصل به اپلیکیشن.</li>
                 <li>پشتیبانی ۲۴/۷ برای رفع مشکلات فنی.</li>
             </ul>
-            <a href="https://ivpn46.github.io/ivpnt46.github.io/download.html" class="action-button">دانلود اپلیکیشن ( کلیک کنید )</a>
+            <!-- لینک دریافت مخفی -->
+            <a href="https://ivpn46.github.io/ivpnt46.github.io/download.html" class="action-button hidden-link" id="download-link">دریافت اپلیکیشن ( کلیک کنید )</a>
         </div>
 
         <!-- روش دوم: خرید از بات تلگرام (مخصوص کاربران ویندوز و iOS) -->
@@ -370,20 +365,6 @@
                 <li>پشتیبانی فنی سریع از طریق بات.</li>
             </ul>
             <a href="https://t.me/VPN46BOT" class="action-button"> ورود به بات تلگرام ( کلیک کنید )</a>
-            
-            <!-- توضیحات پروکسی‌ها -->
-            <p style="color: #cccccc; font-size: 0.9rem; margin-top: 1rem;">
-                برای دسترسی به بات تلگرام در صورت فیلترینگ، از پروکسی‌های رایگان زیر استفاده کنید:
-            </p>
-
-            <!-- پروکسی ۱ -->
-            <a href="https://t.me/proxy?server=gmail.digikala.aparat.google.yahoo.aparat.cloud.asiatech.croxy.aparat.google-intel3-yml.ifreenet.site&port=443&secret=ee8f34d5beb4418f0c7aac0868a20c221b7777772e636c6f7564666c6172652e636f6d" class="proxy-button">پروکسی ۱ (MTProto)</a>
-
-            <!-- پروکسی ۲ -->
-            <a href="https://t.me/proxy?server=iran.russian.gmail.digikala.iran.hetzner.ovh.hetzner.cloud.shadow.kong-proxy-rocks.ifreenet.site&port=443&secret=ee8f34d5beb4418f0c7aac0868a20c221b7777772e636c6f7564666c6172652e636f6d" class="proxy-button">پروکسی ۲ (MTProto)</a>
-
-            <!-- پروکسی ۳ -->
-            <a href="https://t.me/proxy?server=iran.russian.gmail.digikala.iran.hetzner.ovh.hetzner.cloud.shadow.kong-proxy-rocks.ifreenet.site&port=443&secret=ee8f34d5beb4418f0c7aac0868a20c221b7777772e636c6f7564666c6172652e636f6d" class="proxy-button">پروکسی ۳ (MTProto)</a>
         </div>
     </div>
 
@@ -511,5 +492,26 @@
         </div>
         <p>تمامی حقوق برای وی‌پی‌ان 46 محفوظ است. © ۱۴۰۲</p>
     </footer>
+
+    <!-- اسکریپت تشخیص IP و نمایش لینک دریافت -->
+    <script>
+        // توکن IPinfo
+        const IPINFO_TOKEN = 'dcb5dcf651556f';
+
+        // تابع تشخیص IP ایران با استفاده از IPinfo
+        function isIranIP() {
+            return fetch(`https://ipinfo.io/json?token=${IPINFO_TOKEN}`)
+                .then(response => response.json())
+                .then(data => data.country === 'IR')
+                .catch(() => false);
+        }
+
+        // نمایش لینک دریافت برای IPهای ایران
+        isIranIP().then(isIran => {
+            if (isIran) {
+                document.getElementById('download-link').classList.add('show');
+            }
+        });
+    </script>
 </body>
 </html>
